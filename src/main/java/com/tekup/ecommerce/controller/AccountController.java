@@ -11,7 +11,7 @@ import com.tekup.ecommerce.model.Utilisateur;
 import com.tekup.ecommerce.service.AccountServiceImpl;
 
 @RestController
-
+@CrossOrigin("*")
 public class AccountController {
 
 	@Autowired
