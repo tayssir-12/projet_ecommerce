@@ -18,11 +18,13 @@ public class LigneCommande {
 
 	private float prixTotale;
 
+    private float quantite;
+
 
 	@ManyToOne(cascade = CascadeType.ALL) 
 	private Commande commande;
 
-	
+
 
 	public LigneCommande() {
 		super();
