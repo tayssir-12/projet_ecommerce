@@ -10,12 +10,20 @@ import javax.persistence.ManyToOne;
 public class LigneCommande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id ; 
+	private Long id ;
+
 	@ManyToOne 
 	private Article artic ;
-	private float prixTotale; 
+
+
+	private float prixTotale;
+
+
 	@ManyToOne(cascade = CascadeType.ALL) 
 	private Commande commande;
+
+	
+
 	public LigneCommande() {
 		super();
 	}
