@@ -18,15 +18,6 @@ import java.util.Random;
 @SpringBootApplication
 public class ProjetEcommerceApplication {
 
-    @Autowired
-    ArticleRepository articleRepository;
-    @Autowired
-    CategoryRepository categoryRepository;
-
-    @Autowired
-    private RepositoryRestConfiguration repositoryRestConfiguration;
-
-
     public static void main(String[] args) {
         SpringApplication.run(ProjetEcommerceApplication.class, args);
 
@@ -34,7 +25,10 @@ public class ProjetEcommerceApplication {
     }
 
     @Bean
-    public CommandLineRunner demo() {
+    public CommandLineRunner demo(CategoryRepository categoryRepository,
+                                  RepositoryRestConfiguration repositoryRestConfiguration,
+                                  ArticleRepository articleRepository
+                                  ) {
         return (args) -> {
             // exposé id
             repositoryRestConfiguration.exposeIdsFor(Article.class, Category.class);
@@ -42,7 +36,6 @@ public class ProjetEcommerceApplication {
             categoryRepository.save(new Category("Computers"));
             categoryRepository.save(new Category("Printers"));
             categoryRepository.save(new Category("Smart phones"));
-            System.out.println(categoryRepository.findAll());
 
             Random rnd = new Random();
             categoryRepository.findAll().forEach(c -> {
