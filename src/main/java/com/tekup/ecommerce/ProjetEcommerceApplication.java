@@ -1,17 +1,15 @@
 package com.tekup.ecommerce;
 
+import com.tekup.ecommerce.dao.ArticleRepository;
 import com.tekup.ecommerce.dao.CategoryRepository;
+import com.tekup.ecommerce.model.Article;
+import com.tekup.ecommerce.model.Category;
 import net.bytebuddy.utility.RandomString;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-
-import com.tekup.ecommerce.dao.ArticleRepository;
-import com.tekup.ecommerce.model.Article;
-import com.tekup.ecommerce.model.Category;
 
 import java.util.Random;
 
@@ -24,11 +22,12 @@ public class ProjetEcommerceApplication {
 
     }
 
+
     @Bean
     public CommandLineRunner demo(CategoryRepository categoryRepository,
                                   RepositoryRestConfiguration repositoryRestConfiguration,
                                   ArticleRepository articleRepository
-                                  ) {
+    ) {
         return (args) -> {
             // exposé id
             repositoryRestConfiguration.exposeIdsFor(Article.class, Category.class);
@@ -44,9 +43,9 @@ public class ProjetEcommerceApplication {
                     a.setLibelle(RandomString.make(8));
                     a.setDescription(RandomString.make(18));
                     a.setDisponible(rnd.nextBoolean());
-                    a.setPrix(100+rnd.nextInt(10000));
+                    a.setPrix(100 + rnd.nextInt(10000));
                     a.setCategorie(c);
-                    a.setImage("https://picsum.photos/200/300?random="+rnd.nextInt(20));
+                    a.setImage("https://picsum.photos/200/300?random=" + rnd.nextInt(20));
                     articleRepository.save(a);
                 }
             });

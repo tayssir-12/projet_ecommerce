@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="194.35000000000002" y="444.0">com.tekup.ecommerce.dao.CommandeRepository</node>
+    <node x="0.0" y="211.0">com.tekup.ecommerce.model.Commande</node>
+    <node x="292.0" y="266.0">com.tekup.ecommerce.service.IAcountService</node>
+    <node x="-24.649999999999977" y="397.0">com.tekup.ecommerce.model.Facture</node>
+    <node x="464.0" y="255.0">com.tekup.ecommerce.model.Category</node>
+    <node x="128.35000000000002" y="0.0">com.tekup.ecommerce.model.Utilisateur</node>
+    <node x="466.5" y="0.0">com.tekup.ecommerce.model.Article</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.tekup.ecommerce.model.Category" target="com.tekup.ecommerce.model.Article">
+      <point x="-59.625" y="-47.5" />
+      <point x="483.875" y="230.0" />
+      <point x="485.75" y="230.0" />
+      <point x="-57.75" y="102.5" />
+    </edge>
+    <edge source="com.tekup.ecommerce.dao.CommandeRepository" target="com.tekup.ecommerce.model.Commande">
+      <point x="0.0" y="-14.5" />
+      <point x="277.85" y="375.0" />
+      <point x="226.66666666666669" y="375.0" />
+      <point x="90.66666666666669" y="69.5" />
+    </edge>
+    <edge source="com.tekup.ecommerce.model.Article" target="com.tekup.ecommerce.model.Category">
+      <point x="19.25" y="102.5" />
+      <point x="19.875" y="-47.5" />
+    </edge>
+    <edge source="com.tekup.ecommerce.model.Commande" target="com.tekup.ecommerce.model.Utilisateur">
+      <point x="68.0" y="-69.5" />
+      <point x="0.0" y="80.5" />
+    </edge>
+    <edge source="com.tekup.ecommerce.model.Facture" target="com.tekup.ecommerce.model.Commande">
+      <point x="38.5" y="-58.5" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="com.tekup.ecommerce.service.IAcountService" target="com.tekup.ecommerce.model.Utilisateur">
+      <point x="0.0" y="-14.5" />
+      <point x="355.5" y="186.0" />
+      <point x="254.1833333333334" y="186.0" />
+      <point x="50.33333333333337" y="80.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="433.26984126984047" y="268.5" />
+  <SelectedNodes>
+    <node>com.tekup.ecommerce.model.Facture</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
